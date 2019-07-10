@@ -1,15 +1,67 @@
-/*CSS for Menu elements.  */
-table.menu {
-	font-size: 12px;
-	background-color: lightblue;
-	padding: 5px;
-}
 
 body {
 	background-color: white;
 }
 
+/* horz-menu */
+table.horz-menu {
+	background-color: lightgreen;
+	padding: 2px;
+	font-family: "Arial";
+	font-style: bold;
+	font-size: 10px;
+}
+
+p.horz-menu {
+	
+}
+
+div.horz-menu {
+	
+}
+
+ul.horz-menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 160px;
+	background-color: #c3c3c3;
+}
+
+li.horz-menu {
+	display: block;
+	width: 140px;
+	background-color: #aaaaaa;
+	padding: 8px 16px;
+	text-decoration: none;
+	font-family: "Times New Roman";
+	font-size: 14px;
+}
+
+li.horz-menu a:hover {
+	background-color: #545;
+	color: white;
+}
+
+li.horz-menu a.active {
+	background-color: #4CAF50;
+	color: green;
+}
+
+/*CSS for Menu elements.  */
+table.menu {
+	background-color: lightblue;
+	padding: 5px;
+	font-family: "Arial";
+	font-style: bold;
+	font-size: 14px;
+}
+
 p.menu {
+	
+}
+
+div.menu {
 	
 }
 
@@ -27,6 +79,8 @@ li.menu {
 	background-color: #dddddd;
 	padding: 8px 16px;
 	text-decoration: none;
+	font-family: "Times New Roman";
+	font-size: 14px;
 }
 
 li.menu a:hover {

@@ -1,0 +1,23 @@
+
+body {
+	background-color: white;
+}
+
+/*CSS for Body elements. */
+p.body {
+	font-family: "Times New Roman";
+	font-size: 14px;
+}
+
+ul.body {
+	
+}
+
+li.body {
+	
+}
+
+div.body {
+	font-family: "Calibri";
+	font-size: 12px;
+}
