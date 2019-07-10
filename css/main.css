@@ -1,0 +1,61 @@
+/*CSS for Menu elements.  */
+table.menu {
+	font-size: 12px;
+	background-color: lightblue;
+	padding: 5px;
+}
+
+body {
+	background-color: white;
+}
+
+p.menu {
+	
+}
+
+ul.menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	background-color: #f1f1f1;
+}
+
+li.menu {
+	display: block;
+	width: 150px;
+	background-color: #dddddd;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+li.menu a:hover {
+	background-color: #545;
+	color: white;
+}
+
+li.menu a.active {
+	background-color: #4CAF50;
+	color: green;
+}
+
+/*
+li a:hover:not(active) {
+	
+}
+
+*/
+
+/*CSS for Body elements. */
+p {
+	font-family: "Times New Roman";
+	font-size: 14px;
+}
+
+ul {
+	
+}
+
+li {
+	
+}
