@@ -1,105 +1,187 @@
 <html>
   <head>
-	<title>CMPS-262 - Module 2 - Interests</title>
+	<title>CMPS-262 - Module 3 - Interests</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/interests.css">	
+	<link rel="stylesheet" type="text/css" href="css/navbars.css">
+	<link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+	
+	<script src="./jquery-3.3.1.min.js"></script>
+	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+	<script src="http://www.w3schools.com/lib/w3data.js"></script>
+	
+	<script>
+	  function funnyFunc() {
+		document.getElementById("funnybtn").style.color = "red";		
+	  }
+	  
+	  $(document).ready(function() {
+		var ur_interest = $("input#interest_name").val();
+		if(ur_interest !== "") {
+		  var ur_output = "Your interest is, " + ur_interest + ", and sounds cool";
+		}
+		//document.write(ur_output);
+		UpdatePage();
+		alert(ur_interest);
+	  )};
+		
+	</script>
+
+	<style>
+	  .top-navbar {
+	    display: inline-table;
+		position: relative;
+		background-color: #f9f9f9;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+		z-index: 1;
+		y-index: 1;
+	  }
+	  
+	  .top-navbar td{
+	    width: 75px;
+	  }
+	  
+	  .top-navbar a{
+	    color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	  }
+	  
+	  .top-navbar a:hover{
+		background-color: lightblue;		
+	  }
+	  
+	  .my_button {
+	    position: relative;
+		display: inline-block;
+	  }
+	  
+	  .btn-content {
+	    display: none;
+	  }
+	  
+	  .btn-content a {
+	    display: block;
+	  }
+	  	  
+	  .content p{
+	    color: black;
+		padding: 12px 16px;
+		position: relative;
+		text-decoration: none;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+		display: block;
+		width: 650px;
+		z-index: 0;
+		y-index: 2;
+	  }
+	  
+	  .prompt table{
+	    width: 650px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+	  }
+	  
+	  .ur_input {
+	    
+	  }
+	  
+	  .funny {
+	    background-color: #4CAF50;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+	  }
+	  
+	  .top-navbar:hover .funny{
+		text-decoration: overline;
+	  }
+	  
+	  /*
+	  .top-navbar:hover .btn-content{
+		display: block;
+	  }
+	  .top-navbar a:hover{
+	    background-color: #f1f1f1;
+	  }
+	   */
+	  
+	  .my_button:hover .btn-content{
+		display: block;
+	  }
+	  
+	  .my_button a:hover{
+	    background-color: #f1f1f1;
+	  }
+	  
+	</style>
   </head>
   
 <body>
+  <div data-role="page" id="page1">
+    <div data-role="navbar" class="top-navbar">
+	  <table>
+	    <tr>
+		  <td><li class="horz-menu"><a href=./>Home</a></td></li></td>
+		  <td><li class="horz-menu"><a href=./interests.html>Interests</a></td></li></td>
+		  <td><li class="horz-menu"><a href=./portfolio.html>Portfolio</a></td></li></td>
+		  <td><li class="horz-menu"><a href=./current-cv.html>Current CV</a></td></li></td>
+		  <td><li class="horz-menu">
+		<div class="my_button">
+		  <button class="funny" id="funnybtn" onclick="funnyFunc()">Click Here</button>
+			<div class="btn-content">
+			  <a href="">A - CMPS-262 </a>
+			  <a href="">B - CMPS-261 </a>
+			  <a href="">C - CMPS-480 </a>
+			</div>
+		</div>
+		  </li></td>
+		</tr>
+	  </table>
+	</div>  <!--Close out top-navbar DIV -->
+	
+	<div data-role="main" class="content">
+	  <p>
+		I started working on computers with an old Texas Instrument, which
+		I used to create simple loop programs. Then a few years after that
+		we got my Uncle's Tandy 1000, which was a great upgrade and had a color
+		monitor. I started learning QBasic, and playing games. My programs also
+		became more advanced as I learned conditional statements, and more
+		advanced looping techniques.
+		<br>
+		In tenth grade, the high school upgraded their computer system. Since my
+		Dad was a teacher there, I was able to ride home with him and stay after 
+		school. Staying after let me learn about fixing issues there.
+		<br>
+		Some where is an old newspaper clipping of me in the new computer lab.
+		I also helped the teachers with things when the Network Administrator was
+		not there, which earned me the title "The Wizard".
+	  </p>
+	</div> <!--Close out main DIV -->
+	
+	<div data-role="input" class="prompt">
+	  <form method="post">
+		<table>
+		  <tr>
+		    <td>What is one of your interests?</td>
+			<td><input type="text" id="interest_name" class="ur_input"></td>
+			<td><input type="submit" id="submit_btn" class="ur_input"></td>
+		  </tr>
+		  <script>		  
+			function UpdatePage() {
+			  if(ur_output !== "") {
+				document.write("<tr>");
+				document.write("<td>" + ur_output);
+				document.write("</tr>");
+			  }
+			}
+		  </script>
+		</table>
+	  </form>
+	</div>
+  </div> <!--Close out content DIV -->
 
-<table border=1 width=75%>
-	<tr>
-		<td><h1>Module 2 - Assignment</h1></td>
-	</tr>
-	
-	<tr>
-		<!--Horizontal Navigation Menu -->
-		<td>
-		  <table class="horz-menu" cellpadding=5>
-		    <tr>
-			  <div class="menu">
-				<td>
-				  <ul class="horz-menu">
-				    <li class="horz-menu"><a href=./>Assignment #1</a></td></li></ul>
-				<td>
-				  <ul class="horz-menu">
-				    <li class="horz-menu"><a href=./>Assignment #1</a></td></li></ul>
-				<td>
-				  <ul class="horz-menu">
-				    <li class="horz-menu"><a href=./>Assignment #1</a></td></li></ul>
-				<td>
-				  <ul class="horz-menu">
-				    <li class="horz-menu"><a href=./>Assignment #1</a></td></li></ul>
-			  </div>
-			</tr>
-		  </table>
-		</td>
-	</tr>
-	
-	<tr>
-		<td>
-			<table border=1 width=200>
-				<tr>
-					<td>
-					  <!--Vertical Navigation Menu. -->
-					  <div class="menu">
-					    <ul class="menu">
-					      <li class="menu"><a href=./index.html>Home</a></li>
-					      <li class="menu"><a href=./interests.html>Interests</a></li>
-					      <li class="menu"><a href=./photos.html>Portfolio</a></li>
-					      <li class="menu"><a href=./Resume.html>Current Resume</a></li>
-					    </ul>
-					  </div>
-						
-					</td>
-				</tr>
-			</table>
-		</td>
-		
-		<td>
-			<table border=1>
-				<tr>
-					<td>
-					  <div class=body>
-						<p>
-						I started working on computers with an old Texas Instrument, which
-						I used to create simple loop programs. Then a few years after that
-						we got my Uncle's Tandy 1000, which was a great upgrade and had a color
-						monitor. I started learning QBasic, and playing games. My programs also
-						became more advanced as I learned conditional statements, and more
-						advanced looping techniques.
-						<br>
-						In tenth grade, the high school upgraded their computer system. Since my
-						Dad was a teacher there, I was able to ride home with him and stay after 
-						school. Staying after let me learn about fixing issues there.
-						<br>
-						Some where is an old newspaper clipping of me in the new computer lab.
-						I also helped the teachers with things when the Network Administrator was
-						not there, which earned me the title "The Wizard".
-						</p>
-					  </div>
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-					  <div class=body>
-						<p>
-						My lack of employment has allowed me to develop another interest and skill in
-						woodworking. I gather scraps of wood from local trailer factories, that 
-						would otherwise be thrown out. I use the larger scraps of wood to build
-						desks, shelves, and I even built a table and four chair set for my daughter.						
-						</p>
-					  </div>
-					</td>
-				</tr>	
-				
-				<tr>
-					<td>
-						<p>See how this looks</p>
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-  </table>
+</body>
+</html>
