@@ -1,0 +1,155 @@
+ /* Top navigation bar CSS  */
+ 
+ /* horz-menu */
+table.horz-menu {
+	background-color: lightgreen;
+	padding: 2px;
+	font-family: "Arial";
+	font-style: bold;
+	font-size: 10px;
+}
+/*
+p.horz-menu {
+}
+
+div.horz-menu {
+}
+*/
+
+ul.horz-menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 165px;
+	background-color: #c3c3c3;
+}
+
+li.horz-menu {
+	display: inline;
+	width: 140px;
+	background-color: #aaaaaa;
+	padding: 8px;
+	text-decoration: none;
+	font-family: "Times New Roman";
+	font-size: 10px;
+	text-align: center;
+	float: left;
+	margin-right: .5em;
+}
+
+li.horz-menu:hover {
+	background-color: yellow;
+	/* color: white; */
+}
+
+li.horz-menu a:active {
+	background-color: #4AAA50;
+	color: green;
+} 
+
+li.horz-menu:hover:not(active) {
+	background-color: #CCC;
+	color: white;
+}
+
+ /* Side navigation bar CSS  */
+ 
+ /*CSS for Menu elements.  */
+table.menu {
+	background-color: lightblue;
+	padding: 5px;
+	font-family: "Arial";
+	font-style: bold;
+	font-size: 14px;
+}
+
+/*
+p.menu {
+}
+
+div.menu {
+}
+*/
+
+ul.menu {
+	list-style-type: none;
+	margin: 0;
+	padding: .25em;
+	display: block;
+	width: 200px;
+	margin: 0 0 .25em 0;
+	background-color: #f1f1f1;
+}
+
+li.menu {
+	display: block;
+	width: 150px;
+	background-color: #dddddd;
+	padding: 8px 16px;
+	margin: 0 0 .25em 0;
+	text-decoration: none;
+	font-family: "Times New Roman";
+	font-size: 14px;
+}
+
+li.menu a:hover {
+	background-color: #545;
+	color: white;
+}
+
+li.menu a:active {
+	background-color: #4CAF50;
+	color: green;
+}
+
+/* li.horz-menu:hover:not(active) { */
+li.menu:hover:not(active) {
+	background-color: #555;
+}
+
+/* New top navigation bar */
+
+	  .top-navbar {
+	    display: inline-table;
+		position: relative;
+		background-color: #f9f9f9;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+		z-index: 1;
+		y-index: 1;
+	  }
+	  
+	  .top-navbar td{
+	    width: 75px;
+	  }
+	  
+	  .top-navbar a{
+	    color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	  }
+	  
+	  .top-navbar a:hover{
+		background-color: lightblue;		
+	  }
+	  
+	  .content p{
+	    color: black;
+		padding: 12px 16px;
+		position: relative;
+		text-decoration: none;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+		display: block;
+		width: 650px;
+		z-index: 0;
+		y-index: 2;
+	  }
+	  
+	  .top-navbar:hover .funny{
+		text-decoration: overline;
+	  }
+	  
+	  .top-navbar:hover .btn-content{
+		display: block;
+	  }
+	  

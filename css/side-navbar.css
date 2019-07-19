@@ -1,0 +1,54 @@
+ /* Side navigation bar CSS  */
+ 
+ /*CSS for Menu elements.  */
+table.menu {
+	background-color: lightblue;
+	padding: 5px;
+	font-family: "Arial";
+	font-style: bold;
+	font-size: 14px;
+}
+
+/*
+p.menu {
+}
+
+div.menu {
+}
+*/
+
+ul.menu {
+	list-style-type: none;
+	margin: 0;
+	padding: .25em;
+	display: block;
+	width: 200px;
+	margin: 0 0 .25em 0;
+	background-color: #f1f1f1;
+}
+
+li.menu {
+	display: block;
+	width: 150px;
+	background-color: #dddddd;
+	padding: 8px 16px;
+	margin: 0 0 .25em 0;
+	text-decoration: none;
+	font-family: "Times New Roman";
+	font-size: 14px;
+}
+
+li.menu a:hover {
+	background-color: #545;
+	color: white;
+}
+
+li.menu a:active {
+	background-color: #4CAF50;
+	color: green;
+}
+
+/* li.horz-menu:hover:not(active) { */
+li.menu:hover:not(active) {
+	background-color: #555;
+}

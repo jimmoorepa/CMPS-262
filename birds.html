@@ -1,6 +1,6 @@
 <html>
-  <head>
-	<title>CMPS-262 - Module 3 - Interests</title>
+<head>
+	<title>Pigs Don't Fly, but These Birds Do!</title> 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/navbars.css">
 	<link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
@@ -10,11 +10,29 @@
 	<script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
 	<script src="http://www.w3schools.com/lib/w3data.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	
+		
 	<script>
-	  function funnyFunc() {
-		document.getElementById("funnybtn").style.color = "red";		
-	  }
+	  $(document).ready(function () {
+		function thataway() {
+		  $('#firebird').animate({ left: "600" }, 50000, hider);
+		}
+		thataway();
+		function hider() {
+		  $('#firebird').css('left', '0px');
+			thataway();
+		}
+		
+		//These functions move the other bird.
+		function thisaway() {
+		  $('#birdy').animate({ left: "600" }, 35000, collide);
+		}
+		thisaway();
+		function collide() {
+		  $('#birdy').css('left', '150px');
+			thisaway();
+		}
+	  });
+	
 	</script>
 	
 	<style>
@@ -111,20 +129,16 @@
 	  }
 	  
 	  // CSS to enlarge the text body.
-	  p {
+	  .content p.canzoom{
 	    font-family: "Times New Roman";
-		font-size: 12px;
-	  }
-	  p.zoomed {
-	    font-family: "Times New Roman";
-		font-size: 20px;
+		font-size: 18px;
 	  }
 	  
 	</style>
-  </head>
+</head>
   
 <body>
-  <div data-role="page" id="page1">
+<div data-role="page" id="page1">
     <div data-role="navbar" class="top-navbar">
 	  <table>
 	    <tr>
@@ -134,7 +148,7 @@
 		  <td><li class="horz-menu"><a href=./current-cv.html>Current CV</a></td></li></td>
 		  <td><li class="horz-menu">
 		<div class="my_button">
-		  <button class="funny" id="funnybtn" onclick="funnyFunc()">Page Options</button>
+		  <button class="funny" id="funnybtn" onclick="funnyFunc()">Click Here</button>
 			<div class="btn-content">
 			  <button id="bigtext">Bigger Text </button>
 			  <button id="normtext">Normal Text </button>
@@ -147,85 +161,20 @@
 	  </table>
 	</div>  <!--Close out top-navbar DIV -->
 	
-	<div data-role="main" class="content">
-	  <p>
-		I started working on computers with an old Texas Instrument, which
-		I used to create simple loop programs. Then a few years after that
-		we got my Uncle's Tandy 1000, which was a great upgrade and had a color
-		monitor. I started learning QBasic, and playing games. My programs also
-		became more advanced as I learned conditional statements, and more
-		advanced looping techniques.
-		<br>
-		In tenth grade, the high school upgraded their computer system. Since my
-		Dad was a teacher there, I was able to ride home with him and stay after 
-		school. Staying after let me learn about fixing issues there.
-		<br>
-		Some where is an old newspaper clipping of me in the new computer lab.
-		I also helped the teachers with things when the Network Administrator was
-		not there, which earned me the title "The Wizard".
-	  </p>
-	</div> <!--Close out content DIV -->
-	
-	<div data-role="input" class="prompt">
-	  <!-- Creates a table for inputing interests. -->
-	  <form method="post">
-		<table id="pmt_interest">
-		  <tr>
-		    <td>What is one of your interests?</td>
-			<td><input type="text" id="interest_name"></td>
-			<td><input type="submit"></td>
-		  </tr>
-		  <script>
-			//This adds a new row to the table for the text box and button.
-			function UpdatePage(ur_output) {
-			
-			var tableRef = document.getElementById("pmt_interest");
-			var newRow = tableRef.insertRow(-1); 
-			var newCell = newRow.insertCell(0);
-			var newText = document.createTextNode(ur_output);
-			 
-  
-			  if(ur_output !== "") {
-				newCell.appendChild(newText);
-			  }
-			}
-		  </script>
-		</table>
-	  </form>
-	</div> <!--Close out prompt DIV -->
-	
-	<div>
-	  <p class="canzoom">
-		This text gets biggers?
-	  </p>
-	</div>
-  </div> <!--Close out main DIV -->
-  
-	<script>
-		  
-	  $("form").on("submit", function() {
-	    //console.log("It ran");
-		var ur_interest = $("input#interest_name").val();
-		//alert(ur_interest);
-		if(ur_interest !== "") {
-		  var ur_output = "Your interest is, " + ur_interest + ", and sounds cool!";
-		}
-		//document.write(ur_output);
-		UpdatePage(ur_output);
-	  });
-	  
-	  //Functions to enlarge and reduce text size.
-	  $("button#bigtext").on("click", function(){
-	    $("p.canzoom").addClass("zoomed");
-		//alert("Bigger Text"); //debugging
-	  });
-		
-	  $("button#normtext").on("click", function(){
-	    $("p.canzoom").removeClass("zoomed");
-		//alert("Smaller Text"); //debugging
-	  });
-		
-	</script>
+  <div data-role="main" class="content">
 
+	<h1><center>He can't catch her!</center></h1>
+  
+	<form id="form1" runat="server">
+      <div>
+		<img id="firebird" src="./images/Shooting.gif" style="position:absolute"
+			width=200 height=200></img>
+		<img id="birdy" src="./images/flying.gif" style="position:absolute"
+			width=200 height=200></img>
+	  </div>  
+	</form>
+
+  </div> <!--Close out content DIV -->
+</div> <!--Close out page1 DIV -->
 </body>
 </html>
