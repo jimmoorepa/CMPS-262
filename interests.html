@@ -3,6 +3,7 @@
 	<title>CMPS-262 - Module 3 - Interests</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/navbars.css">
+	<link rel="stylesheet" type="text/css" href="css/interests.css">
 	<link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -60,6 +61,8 @@
 	  }
 	  	  
 	  .content p{
+	    font-family: "Times New Roman";
+		font-size: 16px;
 	    color: black;
 		padding: 12px 16px;
 		position: relative;
@@ -74,6 +77,11 @@
 	  .prompt table{
 	    width: 650px;
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+	  }
+	  
+	  .prompt p{
+	    font-family: "Calibri";
+		font-size: 16px;
 	  }
 	  
 	  .ur_input {
@@ -119,7 +127,6 @@
 	    font-family: "Times New Roman";
 		font-size: 20px;
 	  }
-	  
 	</style>
   </head>
   
@@ -139,7 +146,7 @@
 			  <button id="bigtext">Bigger Text </button>
 			  <button id="normtext">Normal Text </button>
 			  <a href="birds.html">Crashing Birds</a>
-			  <a href="">C - CMPS-480 </a>
+			  <a href="">Secret Content</a>
 			</div>
 		</div>
 		  </li></td>
@@ -171,7 +178,7 @@
 	  <form method="post">
 		<table id="pmt_interest">
 		  <tr>
-		    <td>What is one of your interests?</td>
+		    <td><p>What is one of your interests?</p></td>
 			<td><input type="text" id="interest_name"></td>
 			<td><input type="submit"></td>
 		  </tr>
@@ -195,10 +202,23 @@
 	</div> <!--Close out prompt DIV -->
 	
 	<div>
-	  <p class="canzoom">
+	  <p class="canzoom default">
 		This text gets biggers?
 	  </p>
-	</div>
+	</div>	
+	
+	<div class="hideshow">
+	  <p class="hide">
+		<table id="pmt_interest">
+		  <tr>
+		    <td>This table hides a button.</td>
+			<td><button id="showme">Show More</button></td>
+			<td id="hidecell" class="notshown"><button id="hider">Hide More</button></td>
+		  </tr>
+		</table>
+	  </p>
+	</div> 
+	
   </div> <!--Close out main DIV -->
   
 	<script>
@@ -223,6 +243,18 @@
 	  $("button#normtext").on("click", function(){
 	    $("p.canzoom").removeClass("zoomed");
 		//alert("Smaller Text"); //debugging
+	  });
+	  
+	  //Function to Hide and Show a feature.
+	  $(document).ready(function() {
+	  var Target = document.getElementById('hidecell');
+			$("#hider").click(function() {
+			  Target.style.display = 'none';
+			});
+			
+			$("#showme").click(function() {
+			  Target.style.display = 'block';
+			});
 	  });
 		
 	</script>
