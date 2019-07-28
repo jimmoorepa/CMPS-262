@@ -20,7 +20,8 @@ h1 {
 }
 
 .row {
-   margin: 8px -16px;
+  margin: 8px -16px;
+  display: flex;
 }
 
 /* Add padding BETWEEN each column (if you want) */
@@ -33,16 +34,20 @@ h1 {
 .column {
   float: left;
   width: 25%;
+  padding: 5px;
 }
 
-/* Create four equal columns that floats next to each other */
 .subcolumn {
   float: left;
-  width: 90%;
+  width: 100%;
 }
 
+.subcolumn img{
+  width: 90px;
+}
+	
 /* Clear floats after rows */ 
-.row:after {
+.row::after {
   content: "";
   display: table;
   clear: both;
@@ -65,11 +70,17 @@ h1 {
   .column {
     width: 50%;
   }
+  .subcolumn {
+    width: 50%;
+  }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
+    width: 100%;
+  }
+  .subcolumn {
     width: 100%;
   }
 } 
