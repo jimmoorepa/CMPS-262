@@ -37,30 +37,27 @@ function queryData(recordSelect, queryURL) {
 		resSection.addClass("res");
 		resSection.attr("id", "article-res-" + articleCounter);
 		$("#res-section").append(resSection);
-		
-		var subSection = $("#article-details");
-		subSection.addClass("details");
-		$("#article-details").append(subSection);
-		
+		 
 		if (data.response.docs[i].headline !== "null") {
 			$("#article-res-" + articleCounter)
 			.append(
 			  "<h3 class='articleHeadline'><span class='label label-primary'>" +
-              articleCounter + "J</span><strong> " +
+              articleCounter + "</span><strong> " +
               data.response.docs[i].headline.main + "</strong></h3>"			    
 			);			
 		} 
 		// Then display the remaining fields in the HTML (Section Name, Date, URL)
 		//$("#res-section").append(resSection);
 		
-		$("#article-details-" + articleCounter)
-		  .append("<h5>Section: " + data.response.docs[i].section_name + "</h5>_K");
-		$("#article-details-" + articleCounter)
-		  .append("<h5>" + data.response.docs[i].pub_date + "</h5>_L");
-		$("#article-details-" + articleCounter)
-		  .append(
+		//$('#bla').after("article-res-" + articleCounter);
+		$("#article-res-" + articleCounter)
+		  .after("<h5>Section: " + data.response.docs[i].section_name + "</h5>");
+		$("#article-res-" + articleCounter)
+		  .after("<h5>" + data.response.docs[i].pub_date + "</h5>");
+		$("#article-res-" + articleCounter)
+		  .after(
 			"<a href='" + data.response.docs[i].web_url + "'>" +
-			data.response.docs[i].web_url + "</a>_M"
+			data.response.docs[i].web_url + "</a>"
 		  );
 		
 	} // End of main loop.
@@ -73,7 +70,7 @@ $("#RunSearch").on("click", function(event) {
 	// Reset the article counter.
 	articleCounter = 0;
 	
-	$("#well-section").empty();
+	clearResults();
 	
 	//$('input[name=querystr]').val();
 	//$("rectoshow").val();
@@ -102,3 +99,13 @@ $("#RunSearch").on("click", function(event) {
 	// Runs the query with form data.
 	queryData(displayCount, searchURL);
 });
+
+// This button clears the top articles section
+$("#ResetFrm").on("click", function() {
+  clearResults();
+});
+
+function clearResults() {
+	articleCounter = 0;
+	$("#res-section").empty();
+}
