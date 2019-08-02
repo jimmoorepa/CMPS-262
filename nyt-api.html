@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
 	<script src="http://www.w3schools.com/lib/w3data.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -74,7 +75,7 @@
 				<h3>Enter query:</h3>
 			  </td>
 			  <td>
-				<input type="text" id="querystr">
+				<input type="text" id="querystr" name="querystr">
 			  </td>
 			</tr>
 			
@@ -87,10 +88,10 @@
 			    <table>
 				  <tr>
 					<td>
-					  <input type="text" id="begdate">
+					  <input type="text" id="begdate" name="begdate">
 					</td>
 					<td>
-					  <input type="text" id="enddate">
+					  <input type="text" id="enddate" name="enddate">
 					</td>
 				  </tr>
 				</table>
@@ -103,9 +104,9 @@
 				<h3>Number of Articles to Display:</h3>
 			  </td>
 			  <td>
-				<select id="recordsSelect">
+				<select id="rectoshow" name="rectoshow">
 				  <option value="5">5</option>
-				  <option value="10">10</option>
+				  <option value="10" selected>10</option>
 				  <option value="15">15</option>
 				  <option value="All">All</option>
 				</select>
@@ -144,6 +145,8 @@
 
           <!-- This main panel will hold each of the resulting articles -->
 			<div class="panel-body" id="res-section">
+			  <div class="sub-panel-body" id="article-details">
+			  </div>
 			</div>
           </div>
 		</div>
