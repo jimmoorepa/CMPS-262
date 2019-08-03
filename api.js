@@ -12,6 +12,7 @@ var searchString = "";
 var displayCount = "";
 var startDate = "";
 var endDate = "";
+var sortorder = "";
 
 var searchURL = "";
 
@@ -29,10 +30,14 @@ function queryData(recordSelect, queryURL) {
 	//Console log the query URL.
 	console.log("Query URL = " + queryURL);
 		console.log(recordSelect);
+		
+	// ??
+	console.log(data.response.docs.length);
 	
 	for (var i = 0; i < recordSelect; i++) {
 		articleCounter++;
-		console.log(articleCounter);
+		// Some of this section of code is sourced from sushimadeeasy/NYT-API on github.
+		//console.log(articleCounter);
 		var resSection = $("<div>");
 		resSection.addClass("res");
 		resSection.attr("id", "article-res-" + articleCounter);
@@ -46,12 +51,13 @@ function queryData(recordSelect, queryURL) {
               data.response.docs[i].headline.main + "</strong></h3>"			    
 			);			
 		} 
-		// Then display the remaining fields in the HTML (Section Name, Date, URL)
-		//$("#res-section").append(resSection);
+		// Then display the remaining fields in the HTML (Section Name, Date, URL) 
 		
 		//$('#bla').after("article-res-" + articleCounter);
 		$("#article-res-" + articleCounter)
 		  .after("<h5>Section: " + data.response.docs[i].section_name + "</h5>");
+		$("#article-res-" + articleCounter)
+		  .after("<h5>Snippet: " + data.response.docs[i].snippet + "</h5>");
 		$("#article-res-" + articleCounter)
 		  .after("<h5>" + data.response.docs[i].pub_date + "</h5>");
 		$("#article-res-" + articleCounter)
@@ -81,18 +87,23 @@ $("#RunSearch").on("click", function(event) {
 	// Gets the data from the form.
 	searchString = $('input[name=querystr]').val();
 	searchURL = apiURL + searchString;
-	displayCount = $('select[name=rectoshow]').val(); 
+	displayCount = $('select[name=rectoshow]').val();
+	// Only receives the year in a four digit format, 
+	// and the month and day are appended to it.
 	startDate = $('input[name=begdate]').val(); 
 	endDate = $('input[name=enddate]').val(); 
+	sortorder = $('select[name=sortorder]').val();
+	console.log("startDate = " + startDate);
 	
 	// Appends start date and end date to search string.
-	if (startDate !== null) {
+	if ('input[name=begdate]' !== null) {
 		//searchURL = searchURL + "&begin_date=" + startDate + "0101";
 	}
-	if (endDate !== null) {
+	if ('input[name=enddate]' !== null) {
 		//searchURL = searchURL + "&end_date=" + endDate + "0101";
 	}
 	
+	searchURL = searchURL + "&sort=" + sortorder;
 	// Displays the final query URL.
 	//console.log("Search URL for API: " + searchURL);
 	
@@ -101,11 +112,13 @@ $("#RunSearch").on("click", function(event) {
 });
 
 // This button clears the top articles section
-$("#ResetFrm").on("click", function() {
+$('button[name=ResetFrm]').on("click", function() {
   clearResults();
 });
 
 function clearResults() {
 	articleCounter = 0;
-	$("#res-section").empty();
+	//alert("Results cleared");
+	console.clear();
+	$('div[id=res-section]').empty();
 }
