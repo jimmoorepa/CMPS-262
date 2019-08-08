@@ -23,8 +23,7 @@
 :App_GitURL: https://github.com/jimmoorepa/CMPS-262
 |=============================
 App,Location,Environment,URL,Status,Version,Git_URL
-'{Personal_App}','{App_Location}','{App_Environment}',
-'{App_URL}','{App_Status}','{App_Version}','{App_GitURL}'
+'{Personal_App}','{App_Location}','{App_Environment}','{App_URL}','{App_Status}','{App_Version}','{App_GitURL}'
 |=============================
 
 ## Update Strategy:
