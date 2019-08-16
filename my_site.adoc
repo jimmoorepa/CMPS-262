@@ -1,0 +1,32 @@
+# Personal Website
+
+## What is the purpose:
+  The purpose of my e-portfolio is to showcase my interests, a 
+  snapshot of me, an image gallery of my work, and my current resume.
+
+## Development Platform:
+  This website was originally developed using NotePad++, but due to some 
+  limitations was later developed using Atom. The website is hosted on 
+  Point Park University's IT webserver in my jail.
+
+## Development Languages:
+  HTML, CSS, JQuery, and Node
+  
+## Environmental Details:
+
+:Personal_App: Personal Website
+:App_Location: PPU
+:App_Environment: FreeBSD Jail
+:App_URL: http://jmoore.it.pointpark.edu
+:App_Status: Available
+:App_Version: 1.0.5
+:App_GitURL: https://github.com/jimmoorepa/CMPS-262
+[grid="rows",format="csv"]
+|=============================
+App,Location,Environment,URL,Status,Version,Git_URL
+`{Personal_App}`,`{App_Location}`,`{App_Environment}`,`{App_URL}`,`{App_Status}`,`{App_Version}`,`{App_GitURL}`
+|=============================
+
+## Update Strategy:
+
+image::diagram.png[alt=diagram,width=600px][orientation=landscape]

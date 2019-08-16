@@ -1,0 +1,174 @@
+<html>
+  <head>
+	<title>CMPS-262 - Module 4 - Gallery</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/navbars.css">
+	<link rel="stylesheet" type="text/css" href="css/gallery.css">
+	<link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+	<script src="http://www.w3schools.com/lib/w3data.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	 
+	<style>  	  
+	  .maincontent p{
+	    font-family: "Times New Roman";
+		font-size: 16px;
+	    color: black;
+		padding: 12px 16px;
+		position: relative;
+		text-decoration: none;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+		display: block;
+		width: 100%;
+		z-index: 0;
+		y-index: 2;
+	  }
+	  .maincontent h3{
+		width: 100%;
+	  }
+	  
+	  .modal-content {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 700px;
+		z-index: 1;
+		padding-top: 100px; /* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0,0,0); /* Fallback color */
+		background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	  }
+
+
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+	</style>
+	
+  </head>
+  	
+	<script>
+	  function funnyFunc() {
+		document.getElementById("funnybtn").style.color = "red";		
+	  }
+	</script>
+	
+<body>
+  <div data-role="page" id="page1">
+    <div data-role="navbar" class="top-navbar">
+	  <table>
+	    <tr>
+		  <td><li class="horz-menu"><a href=./>Home</a></td></li></td>
+		  <td><li class="horz-menu"><a href=./interests.html>Interests</a></td></li></td>
+		  <td><li class="horz-menu"><a href=./portfolio.html>Portfolio</a></td></li></td>
+		  <td><li class="horz-menu"><a href=./current-cv.html>Current CV</a></td></li></td>
+		  <td><li class="horz-menu"><a href=./nyt-api.html>NY Times API</a></td></li></td>
+		  <td><li class="horz-menu">
+		<div class="my_button">
+		  <button class="funny" id="funnybtn" onclick="funnyFunc()">Page Options</button>
+			<div class="btn-content">
+			  <button id="bigtext">Bigger Text </button>
+			  <button id="normtext">Normal Text </button>
+			  <a href="birds.html">Crashing Birds</a>
+			  <a href="">Secret Content</a>
+			</div>
+		</div>
+		  </li></td>
+		</tr>
+	  </table>
+	</div>  <!--Close out top-navbar DIV -->
+	
+
+	<div data-role="main" class="maincontent">
+	  <!--First row for gallery. -->
+	  <div class="row">
+		<div class="column">
+		  <div class="content" id="image01"> 
+			<div class="row">
+			  <div class="subcolumn">
+			    <img src="./images/cablingbefore.jpg" alt="cabling before">
+			  </div> 
+			  <div class="subcolumn">
+			    <img src="./images/cablingafter.jpg" alt="cabling after">
+			  </div>		    
+			</div> 
+			  <h3>Rack cabling before & after.</h3>
+			  <p>After working for a week, the maintenance staff schedule a power outage. I
+			  took advantage of this time to pull wires and make them manageable.</p>
+			  <button id="cablingbtn">Expand</button>
+		  </div> 
+		</div>  
+		<div class="column">
+		  <div class="content" id="image02">
+			<img src="./images/keyboardstand.jpg" alt="keyboard stand" style="width:100%">
+			<h3>Electronic Keyboard Stand</h3>
+			<p>I built this keyboard stand for my daughter after she started her lessons.</p>
+			  <button class="expand" id="keyboardstandbtn">Expand</button>  
+		  </div> 
+		</div> 
+		<div class="column">
+		  <div class="content" id="image03">
+			<img src="./images/bunkbed.jpg" alt="bunkbed" style="width:100%">
+			<h3>Stuffed Animals Bunkbed</h3>
+			<p>My daughter had too many friends sleeping on her bed. I make this
+			bunkbed for her little friends.</p>
+			  <button class="expand" id="bunkbedbtn">Expand</button>
+		  </div>
+		</div>  
+	  </div>
+	  
+	  <!--Second row for gallery. -->
+	  <div class="row">
+		<div class="column">
+		  <div class="content" id="image04">
+			<img src="./images/tablechairs.jpg" alt="table chairs" style="width:100%">
+			<h3>Table and chair set</h3>
+			<p>A child's table and chair set, made from pine boards with an oak finish, 
+			and the table top is cherry plywood.</p>
+			  <button class="expand" id="tablechairsbtn">Expand</button>
+		  </div>
+		</div> 
+		<div class="column">
+		  <div class="content" id="image05">
+			<img src="./images/playhouse.jpg" alt="play house" style="width:100%">
+			<h3>Playhouse</h3>
+			<p>I built this playhouse out of old pallets for a little over $300 that I used on
+			some treated wood.</p>
+			  <button class="expand" id="playhousebtn">Expand</button>
+		  </div> 
+		</div> 
+		<div class="column">
+		  <div class="content" id="image06">
+			<img src="./images/officedesk.jpg" alt="officedesk" style="width:100%">
+			<h3>Office Desk</h3>
+			<p>Do you have any laminent flooring leftover from another project. I did, and I
+			used it to build myself a corner styled desk. There is a solid 2x4 frame underneath
+			holding everything. It is trimmed with 1x4 pine boards.</p>
+			  <button class="expand" id="officedeskbtn">Expand</button>
+		  </div>
+		</div>
+	  </div>
+	  
+	</div> <!--Close out main content DIV -->
+
+  </div> <!--Close out main DIV --> 
+  
+  <script>
+  
+	$('.expand').click(function() {
+	  alert('Sorry, button does not function!');
+	});
+  
+  </script>
+  
+</body>
+</html>
