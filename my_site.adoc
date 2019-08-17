@@ -32,9 +32,13 @@ App,Location,Environment,URL,Status,Version,Git_URL
 [cols="15,25,60",options="header"]
 |=====
 ^|Item | Issue Description | Resolution
+------
 a| Issue #1 | NYT API refine search by date. | Debugging led me to my api.js file where the if statement was built incorrectly looking at a value that was always null. I changed the if statement to !== "" instead of using the keyword null.
+------
 a| Issue #2 | Portfolio images won't expand. | Debugging led me to removing my original button, and replacing with a small javascript function that opens the images in a new window or tab.
+------
 a| Issue #3 | GitHub Branches out of sync. | Merged branches, pulled to my local branch, fixed some files that were automatically updated, added new files to push to master branch.
+------
 |=====
 
 
