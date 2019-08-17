@@ -27,6 +27,11 @@ App,Location,Environment,URL,Status,Version,Git_URL
 `{Personal_App}`,`{App_Location}`,`{App_Environment}`,`{App_URL}`,`{App_Status}`,`{App_Version}`,`{App_GitURL}`
 |=============================
 
+## Changelog:
+
+:: Issue #1 :: NYT API refine search by date. :: Debugging led me to my api.js file where the if statement was built incorrectly looking at a value that was always null. I changed the if statement to !== "" instead of using the keyword null.
+
+
 ## Update Strategy:
 
 image::diagram.png[alt=diagram,width=600px][orientation=landscape]
