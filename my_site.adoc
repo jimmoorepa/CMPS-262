@@ -29,6 +29,13 @@ App,Location,Environment,URL,Status,Version,Git_URL
 
 ## Changelog:
 
+[cols="10,25,60",options="header"]
+|=====
+^|Item | Issue Description | Resolution
+a| Issue #1 | NYT API refine search by date. | Debugging led me to my api.js file where the if statement was built incorrectly looking at a value that was always null. I changed the if statement to !== "" instead of using the keyword null.
+a| Issue #2 | Portfolio images won't expand. | Debugging led me to my api.js file where the if statement was built incorrectly looking at a value that was always null. I changed the if statement to !== "" instead of using the keyword null.
+|=====
+
 :: Issue #1 :: NYT API refine search by date. :: Debugging led me to my api.js file where the if statement was built incorrectly looking at a value that was always null. I changed the if statement to !== "" instead of using the keyword null.
 
 
