@@ -90,17 +90,21 @@ $("#RunSearch").on("click", function(event) {
 	displayCount = $('select[name=rectoshow]').val();
 	// Only receives the year in a four digit format, 
 	// and the month and day are appended to it.
-	startDate = $('input[name=begdate]').val(); 
+	startDate = $('input[name=begdate]').val();
 	endDate = $('input[name=enddate]').val(); 
 	sortorder = $('select[name=sortorder]').val();
-	console.log("startDate = " + startDate);
+	
+	//console.log("startDate = " + startDate);
+	//console.log("input, startDate = " + $('input[name=begdate]').val());
 	
 	// Appends start date and end date to search string.
-	if ('input[name=begdate]' !== null) {
-		//searchURL = searchURL + "&begin_date=" + startDate + "0101";
+	if ($('input[name=begdate]').val() !== null) {
+		searchURL = searchURL + "&begin_date=" + startDate + "0101";
+		console.log(startDate + " not null.");
 	}
-	if ('input[name=enddate]' !== null) {
-		//searchURL = searchURL + "&end_date=" + endDate + "0101";
+	if ($('input[name=enddate]').val() !== null) {
+		searchURL = searchURL + "&end_date=" + endDate + "0101";
+		console.log(endDate + " not null.");
 	}
 	
 	searchURL = searchURL + "&sort=" + sortorder;
